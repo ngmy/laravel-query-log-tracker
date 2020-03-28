@@ -10,6 +10,10 @@
 
 The Laravel package which log all executed queries.
 
+## Demo
+
+![Demo](https://ngmy.github.io/laravel-query-log-tracker/demo.gif)
+
 ## Features
 
 Laravel Query Log Tracker has the following features:
