@@ -1,0 +1,15 @@
+includes:
+  - vendor/nunomaduro/larastan/extension.neon
+
+parameters:
+  level: max
+  paths:
+    - src
+    - tests
+  reportUnmatchedIgnoredErrors: false
+  ignoreErrors:
+    - '#Call to static method beginDisable\(\) on an unknown class QueryLogTracker\.#' # TODO Think of some way
+    - '#Call to static method endDisable\(\) on an unknown class QueryLogTracker\.#' # TODO Think of some way
+    - '#Call to static method disable\(\) on an unknown class QueryLogTracker\.#' # TODO Think of some way
+
+# vim: set ft=yaml:
