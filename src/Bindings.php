@@ -35,10 +35,10 @@ class Bindings
     /**
      * @return self
      */
-    public function format(): self
+    public function prepare(): self
     {
         return new self(array_reduce(array_keys($this->bindings), function (array $carry, $key): array {
-            $carry[$key] = $this->bindings[$key]->format();
+            $carry[$key] = $this->bindings[$key]->prepare();
             return $carry;
         }, []));
     }
@@ -61,16 +61,17 @@ class Bindings
      */
     public function bindTo(Sql $sql, ConnectionInterface $connection): Sql
     {
-        $bindings = $this->format()->toArray();
+        $bindings = $this->prepare()->toArray();
 
         if (empty($bindings)) {
             return $sql;
         }
 
         $bindings = $connection->prepareBindings($bindings);
-        foreach ($bindings as $key => $binding) {
+        $bindings = static::fromArray($bindings);
+        foreach ($bindings->bindings as $key => $binding) {
             $placeholder = new Placeholder($key);
-            $sql = (new Binding($binding))->bindTo($sql, $placeholder, $connection);
+            $sql = $binding->bindTo($sql, $placeholder, $connection);
         }
 
         return $sql;

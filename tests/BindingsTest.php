@@ -21,7 +21,7 @@ class BindingsTest extends TestCase
      *             expectedResult: string
      *         }>
      */
-    public function provideFormat(): array
+    public function providePrepare(): array
     {
         return [
             'Bindings are empty' => [
@@ -67,9 +67,9 @@ class BindingsTest extends TestCase
      * @param array<int, mixed>|array<string, mixed> $bindings
      * @param string                                 $expectedResult
      * @return void
-     * @dataProvider provideFormat
+     * @dataProvider providePrepare
      */
-    public function testFormat(string $sql, array $bindings, string $expectedResult): void
+    public function testPrepare(string $sql, array $bindings, string $expectedResult): void
     {
         $sut = $this->makeSut($bindings);
 
