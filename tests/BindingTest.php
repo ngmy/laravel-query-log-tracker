@@ -11,7 +11,7 @@ class BindingTest extends TestCase
     /**
      * @return array<string, array{binding: mixed, expectedResult: mixed}>
      */
-    public function provideFormat(): array
+    public function providePrepare(): array
     {
         return [
             'Binding is an integer' => [
@@ -33,13 +33,13 @@ class BindingTest extends TestCase
      * @param mixed $binding
      * @param mixed $expectedResult
      * @return void
-     * @dataProvider provideFormat
+     * @dataProvider providePrepare
      */
-    public function testFormat($binding, $expectedResult): void
+    public function testPrepare($binding, $expectedResult): void
     {
         $sut = $this->makeSut($binding);
 
-        $actualResult = $sut->format();
+        $actualResult = $sut->prepare();
 
         $expectedResult = $this->makeSut($expectedResult);
 

@@ -23,7 +23,7 @@ class Binding
     /**
      * @return self
      */
-    public function format(): self
+    public function prepare(): self
     {
         $value = $this->value;
 

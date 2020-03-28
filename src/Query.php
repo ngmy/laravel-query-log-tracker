@@ -55,7 +55,7 @@ class Query
     public function getContext(): array
     {
         return [
-            'bindings' => $this->bindings->format()->toArray(),
+            'bindings' => $this->bindings->prepare()->toArray(),
             'time' => $this->time,
             'connectionName' => $this->connectionName,
         ];
