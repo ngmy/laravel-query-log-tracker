@@ -21,6 +21,16 @@
         "phpunit/phpunit": "^8.0",
         "squizlabs/php_codesniffer": "^3.0"
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ngmy\\LaravelQueryLogTracker\\QueryLogTrackerServiceProvider"
+            ],
+            "aliases": {
+                "QueryLogTracker": "Ngmy\\LaravelQueryLogTracker\\QueryLogTrackerFacade"
+            }
+        }
+    },
     "autoload": {
         "psr-4": {
             "Ngmy\\LaravelQueryLogTracker\\": "src/"
