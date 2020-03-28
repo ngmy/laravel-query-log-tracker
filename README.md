@@ -1,5 +1,13 @@
 # Laravel Query Log Tracker
 
+[![Latest Stable Version](https://poser.pugx.org/ngmy/laravel-query-log-tracker/v/stable)](https://packagist.org/packages/ngmy/laravel-query-log-tracker)
+[![Total Downloads](https://poser.pugx.org/ngmy/laravel-query-log-tracker/downloads)](https://packagist.org/packages/ngmy/laravel-query-log-tracker)
+[![Latest Unstable Version](https://poser.pugx.org/ngmy/laravel-query-log-tracker/v/unstable)](https://packagist.org/packages/ngmy/laravel-query-log-tracker)
+[![License](https://poser.pugx.org/ngmy/laravel-query-log-tracker/license)](https://packagist.org/packages/ngmy/laravel-query-log-tracker)
+[![composer.lock](https://poser.pugx.org/ngmy/laravel-query-log-tracker/composerlock)](https://packagist.org/packages/ngmy/laravel-query-log-tracker)<br>
+[![Build Status](https://travis-ci.org/ngmy/laravel-query-log-tracker.svg?branch=master)](https://travis-ci.org/ngmy/laravel-query-log-tracker)
+[![Coverage Status](https://coveralls.io/repos/github/ngmy/laravel-query-log-tracker/badge.svg?branch=master)](https://coveralls.io/github/ngmy/laravel-query-log-tracker?branch=master)
+
 The Laravel package which log all executed queries.
 
 ## Features
