@@ -34,17 +34,27 @@ composer require ngmy/laravel-query-log-tracker
 ```
 This will update your `composer.json` file and install this package into the `vendor` directory.
 
+If you don't use package discovery, add the service provider to the `providers` array in the `config/app.php` file:
+```php
+Ngmy\LaravelQueryLogTracker\QueryLogTrackerServiceProvider::class,
+```
+
+If you don't use package discovery, add the alias to the `aliases` array in the `config/app.php` file:
+```php
+'QueryLogTracker' => Ngmy\LaravelQueryLogTracker\QueryLogTrackerFacade::class,
+```
+
 ### Publishing Configuration
 
 Execute the Artisan `vendor:publish` command:
 ```
 php artisan vendor:publish
 ```
-This will publish the configuration file to the `config/ngmy-laravel-query-log-tracker.php` file.
+This will publish the configuration file to the `config/ngmy-query-log-tracker.php` file.
 
 You can also use the tag to execute the command:
 ```
-php artisan vendor:publish --tag=ngmy-laravel-query-log-tracker
+php artisan vendor:publish --tag=ngmy-query-log-tracker
 ```
 
 You can also use the service provider to execute the command:
