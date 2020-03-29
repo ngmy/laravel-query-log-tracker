@@ -21,7 +21,7 @@ Laravel Query Log Tracker has the following features:
 * Log all executed queries with the following items:
   * SQL with bound parameters
   * Bind parameters
-  * Execution time
+  * Execution time in milliseconds
   * Connection name
 * Disable/Enable query logging at runtime
 * More configurations:
