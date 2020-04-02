@@ -30,6 +30,13 @@ Laravel Query Log Tracker has the following features:
   * Channel
   * Stacks
 
+## Requirements
+
+Laravel Query Log Tracker has the following requirements:
+
+* PHP >= 7.2
+* Laravel >= 5.6
+
 ## Installation
 
 Execute the Composer `require` command:
