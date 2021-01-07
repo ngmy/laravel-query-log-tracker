@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Ngmy\LaravelQueryLogTracker;
 
-use Illuminate\Database\ConnectionInterface;
+use Illuminate\Database\Connection;
 
 class Query
 {
@@ -16,15 +16,15 @@ class Query
     private $time;
     /** @var string */
     private $connectionName;
-    /** @var ConnectionInterface */
+    /** @var Connection */
     private $connection;
 
     /**
-     * @param Sql                 $sql
-     * @param Bindings            $bindings
-     * @param float               $time
-     * @param string              $connectionName
-     * @param ConnectionInterface $connection
+     * @param Sql        $sql
+     * @param Bindings   $bindings
+     * @param float      $time
+     * @param string     $connectionName
+     * @param Connection $connection
      * @return void
      */
     public function __construct(
@@ -32,7 +32,7 @@ class Query
         Bindings $bindings,
         float $time,
         string $connectionName,
-        ConnectionInterface $connection
+        Connection $connection
     ) {
         $this->sql = $sql;
         $this->bindings = $bindings;

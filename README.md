@@ -27,8 +27,7 @@ Laravel Query Log Tracker has the following features:
 * More configurations:
   * Log level
   * Exclude patterns
-  * Channel
-  * Stacks
+  * Channels
 
 ## Requirements
 
