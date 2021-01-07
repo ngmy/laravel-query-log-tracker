@@ -1,0 +1,56 @@
+{
+    "name": "ngmy/laravel-query-log-tracker",
+    "description": "The Laravel package which log all executed queries.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yuta Nagamiya",
+            "email": "y.nagamiya@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "illuminate/support": "^7.0"
+    },
+    "require-dev": {
+        "nunomaduro/larastan": "0.6.11",
+        "orchestra/testbench": "5.12.1"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ngmy\\LaravelQueryLogTracker\\QueryLogTrackerServiceProvider"
+            ],
+            "aliases": {
+                "QueryLogTracker": "Ngmy\\LaravelQueryLogTracker\\QueryLogTrackerFacade"
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Ngmy\\LaravelQueryLogTracker\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ngmy\\LaravelQueryLogTracker\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "test": [
+            "@php vendor/bin/phpunit --colors=always"
+        ],
+        "lint": [
+            "@php vendor/bin/phpcs --colors"
+        ],
+        "findbugs": [
+            "@php vendor/bin/phpstan analyse --ansi"
+        ]
+    }
+}
