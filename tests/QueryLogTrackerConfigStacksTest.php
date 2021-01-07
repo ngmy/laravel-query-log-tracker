@@ -18,8 +18,8 @@ class QueryLogTrackerConfigStacksTest extends TestCase
         $logStack1 = $this->getLog();
         $logStack2 = $this->getLog('laravel-ngmy-query-log-tracker.log');
 
-        $this->assertRegExp('/INFO.*select \* from users/', $logStack1);
-        $this->assertRegExp('/INFO.*select \* from users/', $logStack2);
+        $this->assertMatchesRegularExpression('/INFO.*select \* from users/', $logStack1);
+        $this->assertMatchesRegularExpression('/INFO.*select \* from users/', $logStack2);
     }
 
     /**

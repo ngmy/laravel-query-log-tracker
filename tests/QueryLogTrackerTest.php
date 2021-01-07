@@ -19,7 +19,7 @@ class QueryLogTrackerTest extends TestCase
 
         $log = $this->getLog();
 
-        $this->assertRegExp('/INFO.*select \* from users/', $log);
+        $this->assertMatchesRegularExpression('/INFO.*select \* from users/', $log);
     }
 
     /**
@@ -35,7 +35,7 @@ class QueryLogTrackerTest extends TestCase
 
         $log = $this->getLog();
 
-        $this->assertRegExp('/INFO.*select \* from users' .
+        $this->assertMatchesRegularExpression('/INFO.*select \* from users' .
             '.*\[1,"hoge@example\.com","2020\-01\-01 00:00:00"\]/', $log);
     }
 
@@ -52,7 +52,7 @@ class QueryLogTrackerTest extends TestCase
 
         $log = $this->getLog();
 
-        $this->assertRegExp('/INFO.*select \* from users' .
+        $this->assertMatchesRegularExpression('/INFO.*select \* from users' .
             '.*\{"id":1,"email":"hoge@example\.com","created_at":"2020\-01\-01 00:00:00"\}/', $log);
     }
 
@@ -67,7 +67,7 @@ class QueryLogTrackerTest extends TestCase
 
         $log = $this->getLog();
 
-        $this->assertNotRegExp('/INFO.*select \* from users/', $log);
+        $this->assertDoesNotMatchRegularExpression('/INFO.*select \* from users/', $log);
     }
 
     /**
@@ -81,6 +81,6 @@ class QueryLogTrackerTest extends TestCase
 
         $log = $this->getLog();
 
-        $this->assertNotRegExp('/INFO.*select \* from users/', $log);
+        $this->assertDoesNotMatchRegularExpression('/INFO.*select \* from users/', $log);
     }
 }

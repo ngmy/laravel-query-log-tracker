@@ -18,8 +18,8 @@ class QueryLogTrackerConfigChannelTest extends TestCase
         $logDefaultChannel = $this->getLog();
         $logSpecifiedChannel = $this->getLog('laravel-ngmy-query-log-tracker.log');
 
-        $this->assertNotRegExp('/.*INFO.*select \* from users/', $logDefaultChannel);
-        $this->assertRegExp('/.*INFO.*select \* from users/', $logSpecifiedChannel);
+        $this->assertDoesNotMatchRegularExpression('/.*INFO.*select \* from users/', $logDefaultChannel);
+        $this->assertMatchesRegularExpression('/.*INFO.*select \* from users/', $logSpecifiedChannel);
     }
 
     /**
