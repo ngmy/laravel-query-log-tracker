@@ -34,13 +34,13 @@ Laravel Query Log Tracker has the following features:
 
 Laravel Query Log Tracker has the following requirements:
 
-* PHP >= 7.2
-* Laravel >= 5.6
+* PHP >= 7.3
+* Laravel >= 6.0
 
 ## Installation
 
 Execute the Composer `require` command:
-```
+```console
 composer require ngmy/laravel-query-log-tracker
 ```
 This will update your `composer.json` file and install this package into the `vendor` directory.
@@ -58,18 +58,18 @@ If you don't use package discovery, add the alias to the `aliases` array in the 
 ### Publishing Configuration
 
 Execute the Artisan `vendor:publish` command:
-```
+```console
 php artisan vendor:publish
 ```
 This will publish the configuration file to the `config/ngmy-query-log-tracker.php` file.
 
 You can also use the tag to execute the command:
-```
+```console
 php artisan vendor:publish --tag=ngmy-query-log-tracker
 ```
 
 You can also use the service provider to execute the command:
-```
+```console
 php artisan vendor:publish --provider="Ngmy\LaravelQueryLogTracker\QueryLogTrackerServiceProvider"
 ```
 
