@@ -44,13 +44,13 @@
     "prefer-stable": true,
     "scripts": {
         "test": [
-            "@php vendor/bin/phpunit --colors=always"
+            "@php tools/phpunit --colors=always"
         ],
         "lint": [
-            "@php vendor/bin/phpcs --colors"
+            "@php tools/phpcs --colors"
         ],
         "findbugs": [
-            "@php vendor/bin/phpstan analyse --ansi"
+            "@php tools/phpstan analyse --ansi"
         ]
     }
 }
