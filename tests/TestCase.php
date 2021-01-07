@@ -64,13 +64,7 @@ class TestCase extends OrchestraTestCase
      */
     protected function getEnvironmentSetUp($app): void
     {
-        // Setup default database to use sqlite :memory:
-        $app->make('config')->set('database.default', 'ngmy_query_log_tracker_test');
-        $app->make('config')->set('database.connections.ngmy_query_log_tracker_test', [
-            'driver'   => 'sqlite',
-            'database' => ':memory:',
-            'prefix'   => '',
-        ]);
+        $app->make('config')->set('database.default', 'mysql');
     }
 
     /**

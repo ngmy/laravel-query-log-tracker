@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Ngmy\LaravelQueryLogTracker;
 
-use Illuminate\Database\ConnectionInterface;
+use Illuminate\Database\Connection;
 
 class Bindings
 {
@@ -55,11 +55,11 @@ class Bindings
     }
 
     /**
-     * @param Sql                 $sql
-     * @param ConnectionInterface $connection
+     * @param Sql        $sql
+     * @param Connection $connection
      * @return Sql
      */
-    public function bindTo(Sql $sql, ConnectionInterface $connection): Sql
+    public function bindTo(Sql $sql, Connection $connection): Sql
     {
         $bindings = $this->prepare()->toArray();
 

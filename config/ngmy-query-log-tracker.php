@@ -30,26 +30,14 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Log Channel
+    | Log Channels
     |--------------------------------------------------------------------------
     |
-    | This value is a channel that log queries. If this value is not specified,
+    | This value is channels that log queries. If this value is not specified,
     | queries are logged to your application's default channel.
     |
     */
 
-    'channel' => '',
-
-    /*
-    |--------------------------------------------------------------------------
-    | Log Stacks
-    |--------------------------------------------------------------------------
-    |
-    | This value is stacks that log queries. If this value is not specified,
-    | queries are logged to your application's default channel.
-    |
-    */
-
-    'stacks' => [],
+    'channels' => [],
 
 ];

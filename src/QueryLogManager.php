@@ -6,6 +6,7 @@ namespace Ngmy\LaravelQueryLogTracker;
 
 use Illuminate\Database\Events\QueryExecuted;
 use Illuminate\Foundation\Application;
+use Illuminate\Log\LogManager;
 use Psr\Log\LoggerInterface;
 
 class QueryLogManager
@@ -130,14 +131,9 @@ class QueryLogManager
     {
         $config = $this->configuration();
 
-        $channel = $config['channel'] ?? '';
-        if (!empty($channel)) {
-            $logger = $logger->channel($channel);
-        }
-
-        $stacks = $config['stacks'] ?? [];
-        if (!empty($stacks)) {
-            $logger = $logger->stack($stacks);
+        $channels = $config['channels'] ?? [];
+        if (!empty($channels) && $logger instanceof LogManager) {
+            $logger = $logger->stack($channels);
         }
 
         return $logger;

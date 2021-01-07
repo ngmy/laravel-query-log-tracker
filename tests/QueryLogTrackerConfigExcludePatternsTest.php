@@ -17,7 +17,8 @@ class QueryLogTrackerConfigExcludePatternsTest extends TestCase
 
         $log = $this->getLog();
 
-        $this->assertNotRegExp('/select \* from users/', $log);
+        assert(method_exists($this, 'assertDoesNotMatchRegularExpression'));
+        $this->assertDoesNotMatchRegularExpression('/select \* from users/', $log);
     }
 
     /**
