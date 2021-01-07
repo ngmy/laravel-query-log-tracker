@@ -17,6 +17,7 @@ class QueryLogTrackerConfigLevelTest extends TestCase
 
         $log = $this->getLog();
 
+        assert(method_exists($this, 'assertMatchesRegularExpression'));
         $this->assertMatchesRegularExpression('/DEBUG.*select \* from users/', $log);
     }
 

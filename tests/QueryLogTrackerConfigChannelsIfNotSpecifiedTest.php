@@ -17,6 +17,7 @@ class QueryLogTrackerConfigChannelsIfNotSpecifiedTest extends TestCase
 
         $logDefaultChannel = $this->getLog();
 
+        assert(method_exists($this, 'assertMatchesRegularExpression'));
         $this->assertMatchesRegularExpression('/.*INFO.*select \* from users/', $logDefaultChannel);
     }
 }
